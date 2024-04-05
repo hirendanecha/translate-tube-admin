@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChannelsComponent } from './channels.component';
+import { EditChannelComponent } from 'src/app/@shared/components/edit-channel/edit-channel.component';
 
 const routes: Routes = [
   {
@@ -8,6 +9,12 @@ const routes: Routes = [
     component: ChannelsComponent,
     data: {
       title: 'Channel Page',
+    },
+  }, {
+    path: 'edit/:id',
+    component: EditChannelComponent,
+    data: {
+      title: 'Edit Channel',
     },
   },
 ];

@@ -39,7 +39,7 @@ export class ChannelsComponent {
     private router: Router,
     private modalService: NgbModal,
     private spinner: NgxSpinnerService,
-    private toaster: ToastService 
+    private toaster: ToastService
 
   ) {
     // this.searchCtrl = new FormControl('');
@@ -71,9 +71,6 @@ export class ChannelsComponent {
           this.spinner.hide();
           if (res.data) {
             this.channelList = res?.data;
-
-            console.log(this.channelList );
-            
             this.pagination.perPage = res?.pagination?.pageSize;
             this.pagination.totalItems = res?.pagination?.totalItems;
           }
@@ -134,7 +131,7 @@ export class ChannelsComponent {
   }
 
   openChannel(id: any): void {
-    this.router.navigate([`community/edit/${id}`]);
+    this.router.navigate([`channels/edit/${id}`]);
   }
 
   onPageChange(config: Pagination): void {

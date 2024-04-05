@@ -48,6 +48,10 @@ export class ChannelService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
+  findChannelById(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}/get/${id}`);
+  }
+
   getChannelById(id): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -70,5 +74,29 @@ export class ChannelService {
     );
 
     return this.http.request(req);
+  }
+
+  editChannal(id: number, data: any): Observable<any> {
+    return this.http.put<any>(
+      `${this.baseUrl}/edit-channel/${id}`, data
+    );
+  }
+  createChannalAdminByMA(data: any): Observable<any> {
+    return this.http.post<any>(
+      `${this.baseUrl}/create-admin`,
+      data
+    );
+  }
+
+  removeFromChannel(id, profileId): Observable<any> {
+    return this.http.delete(
+      `${this.baseUrl}/leave?channelId=${id}&profileId=${profileId}`
+    );
+  }
+
+  getProfileList(searchText: string = ''): Observable<object> {
+    return this.http.get(
+      `${this.baseUrl}/search-user?searchText=${searchText}`
+    );
   }
 }
