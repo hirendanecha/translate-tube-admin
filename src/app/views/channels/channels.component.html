@@ -54,12 +54,12 @@
               >
             </td>
             <td class="c-width">
-              {{ channel.Username || channel.FirstName }}
+              {{ channel.userName || channel.FirstName }}
             </td>
             <td>
               <img
                 class="avatar-img"
-                [src]="channel.ProfilePicName"
+                [src]="channel.profilePicName"
                 onerror="this.onerror=null;
                 this.src='assets/img/avatars/placeholder-user.png';"
               />
