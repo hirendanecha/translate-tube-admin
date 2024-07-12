@@ -9,14 +9,14 @@
             <c-col md="1">
               <img
                 class="avatar-img"
-                [src]="postDetails?.profilePicName"
+                [src]="postDetails?.ProfilePicName"
                 onerror="this.onerror=null;this.src='/assets/img/avatars/placeholder-user.png';"
               />
             </c-col>
             <c-col>
               <div>
-                <p class="mb-0" *ngIf="postDetails?.userName">
-                  @{{ postDetails?.userName | lowercase }}
+                <p class="mb-0" *ngIf="postDetails?.Username">
+                  @{{ postDetails?.Username | lowercase }}
                 </p>
               </div>
               <div class="mt-3">
